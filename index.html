@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaming Retailer n°1 </title>
+<link rel="stylesheet" href="./css/styles.css"/>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!--Import Vue library*-->
+<script src="./data/data.js"></script> <!--Import Our data*-->
+
+
+<!--Importing Boostrap CSS (first link) and icons (second link) for styling-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet2"
+href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.1/font/bootstrap-icons.min.css"
+integrity="sha512-WYaDo1TDjuW+MPatvDarHSfuhFAflHxD87U9RoB4/CSFh24/jzUHfirvuvwGmJq0U7S9ohBXy4Tfmk2UKkp2gA=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+<div id="app">
+    <div class="nav-bar">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Gaming Retailer n°1 </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page">
+                                <button> Cart({{cart}})</button></a>
+                        </li>                    
+                    </ul>
+                </div> 
+            </div> 
+          </nav>
+
+    </div>
+
+    
+
+    <div>
+        <h1 class="main_title">Our Gaming Peripherals</h1>
+        <hr class="myhr">
+        <br>
+        <product-display :premium="premium" @add-to-cart="updateCart" @rm-to-cart="updateCart2"></product-display>
+        <product2-display :premium="premium" @add-to-cart="updateCart" @rm-to-cart="updateCart2"></product2-display>
+        <product3-display :premium="premium" @add-to-cart="updateCart" @rm-to-cart="updateCart2"></product3-display>
+
+    </div>
+    
+</div>
+
+
+
+<!--Import Our App*-->
+<script src="./main.js"></script> 
+
+<!--Import Our Components*-->
+<script src="./components/ProductDisplay.js"></script> 
+<script src="./components/Product2Display.js"></script> 
+<script src="./components/Product3Display.js"></script> 
+<script src="./components/ReviewForm.js"></script> 
+<script src="./components/ReviewList.js"></script> 
+
+<!--Mount Our App*-->
+<script>
+    const mountedApp= app.mount('#app')
+</script>
+</body>
+
+<footer>&copy; - Komail KASSIMALY & Harish UDAYAKUMAR</footer>
+
+</html>
